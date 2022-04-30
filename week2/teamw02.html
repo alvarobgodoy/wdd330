@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="teamw02.js"></script>
+</head>
+<body>
+    <input id="numbers" type="number"></input>
+    <button type="button" onclick="sumNumber()">Button</button>
+    <div id="output"></div>
+
+    <p>Adding Machine</p>
+    <input id="number1" type="number">
+    <input id="number2" type="number">
+    <button type="button" onclick="compute(add)">+</button>
+    <button type="button" onclick="compute(subtract)">-</button>
+    <button type="button" onclick="compute(multiply)">*</button>
+    <div id="output2"></div>
+
+    <p>Callbacks are used in this activity. I created a main function called "compute" that basically calculates the result using the right "subfunction" and prints the result to the document. Then, I created each on of the subfunctions to provide the functionality (sum, subtract, multiply).</p>
+</body>
+</html>
