@@ -22,7 +22,6 @@ class Calculator {
     read() {
         this.a = +prompt('a?', 0);
         this.b = +prompt('b?', 0);
-        alert('Check the console for results')
     }
     sum() {
         return this.a + this.b
@@ -34,5 +33,5 @@ class Calculator {
 
 let calculator = new Calculator();
 calculator.read();
-console.log(calculator.sum());
-console.log(calculator.mul());
+document.getElementById('sum').textContent = calculator.sum();
+document.getElementById('mul').textContent = calculator.mul();

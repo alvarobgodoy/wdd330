@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/* Small view */
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    max-width: 50%;
     margin: 1rem auto;
-    border: 1px solid black;
-    padding: 2rem;
-    box-shadow: 0 0 10px 1px grey;
+    padding: 1rem;
 }
 
 a {
@@ -17,4 +15,21 @@ a {
 
 li {
     margin-top: 1rem;
+}
+
+/* Medium view */
+@media only screen and (min-width: 40rem) {
+body {
+    max-width: 75%;
+    border: 1px solid black;
+    box-shadow: 0 0 10px 1px grey;
+    padding: 2rem;
+}
+}
+
+/* Large view */
+@media only screen and (min-width: 64rem) {
+body {
+    max-width: 50%;
+}
 }
