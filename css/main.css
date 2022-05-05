@@ -3,14 +3,15 @@
 /* Small view */
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
     margin: 1rem auto;
     padding: 1rem;
+    color: #fff;
+    background-color: #0D1117;
 }
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #3CA6FF;
 }
 
 li {
@@ -21,8 +22,8 @@ li {
 @media only screen and (min-width: 40rem) {
 body {
     max-width: 75%;
-    border: 1px solid black;
-    box-shadow: 0 0 10px 1px grey;
+    border: 1px solid #30363D;
+    border-radius: 6px;
     padding: 2rem;
 }
 }
