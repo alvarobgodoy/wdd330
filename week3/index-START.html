@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,7 @@
   </head>
   <body>
     <a href="../">Home > </a><a href="./">Week 3 > </a><a href="./index-START.html">Team Activity Part 1</a>
-    <h1>Group 5 Team Activity: Array Cardio Day 1 💪</h1>
+    <h1>Group 5 Team Activity: Part 1</h1>
     <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
     <script>
       // Get your shorts on - this is an array workout!
@@ -77,18 +76,35 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
-      
+      const inventors1500 = inventors.filter((item) => {
+        return item.year >= 1500 && item.year <= 1600
+      });
+      console.log(inventors1500);
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
-
+      const inventorsNames = inventors.map((item) => {
+        return [item.first, item.last]
+      });
+      console.log(inventorsNames);
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
-
+      const sortedInventors = inventors.sort((a, b) => {
+        return a.year - b.year
+      });
+      console.log(sortedInventors);
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live?
-
+      const yearsLived = inventors.reduce((result, item) => {
+        return result + (item.passed - item.year)
+      }, 0); 
+      console.log(yearsLived)
       // 5. Sort the inventors by years lived
-
+      const sortedInventorsByAge = inventors.sort((a, b) => {
+        let ageA = a.passed - a.year;
+        let ageB = b.passed - b.year;
+        return ageA - ageB
+      });
+      console.log(sortedInventorsByAge);
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
@@ -97,7 +113,7 @@
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
-
+      
       // 8. Reduce Exercise
       // Sum up the instances of each of these
       const data = [
