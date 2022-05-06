@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Ninja</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <a href="../">Home > </a><a href="./">Week 3 > </a><a href="./quizninja.html">Quiz Ninja</a>
+    <h1>Quiz Ninja</h1>
+    <img src="https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg" alt="Dojo Image">
+    <p>The spread/rest operator (...) is used in the code example. <a href="https://stackoverflow.com/questions/31048953/what-do-these-three-dots-in-react-do#:~:text=The%20three%20dots%20in,ECMAScript%20with%20minor%20issues.">Click here</a> to dive deeper 🤿</p>
+    <script>
+const quiz = [
+    { name: "Superman",realName: "Clark Kent" },
+    { name: "Wonder Woman",realName: "Diana Prince" },
+    { name: "Batman",realName: "Bruce Wayne" },
+];
+
+const game = {
+    start(quiz) {
+        this.questions = [...quiz];
+        this.score = 0;
+        for(const question of this.questions) {
+            this.question = question;
+            this.ask();
+        }
+        this.gameOver();
+    },
+    ask() {
+        this.answer = prompt(`What is the real name of ${this.question.name}?`);
+        this.check();
+    },
+    check() {
+        if (this.answer == this.question.realName) {
+            this.score++;
+        }
+    },
+    gameOver() {
+        alert(`You've got ${this.score} points!`)
+    }
+}
+
+game.start(quiz);
+    </script>
+</body>
+</html>
