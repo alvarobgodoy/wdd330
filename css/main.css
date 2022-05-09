@@ -18,6 +18,10 @@ a {
     color: #3CA6FF;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 img {
     width: 100%;   
     border: 1px solid #30363D;
