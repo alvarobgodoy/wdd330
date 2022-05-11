@@ -1,21 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+    --links: #3CA6FF;
+    --main-background: #0D1117;
+    --borders: #30363D;
+    --text-color: #ffffff;
+}
+
 /* Small view */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 1rem auto;
     padding: 1rem;
-    color: #fff;
-    background-color: #0D1117;
+    color: var(--text-color);
+    background-color: var(--main-background);
 }
 
 h1, h2, h3 {
-    border-bottom: 1px solid #30363D;
+    border-bottom: 1px solid var(--borders);
 }
 
 a {
     text-decoration: none;
-    color: #3CA6FF;
+    color: var(--links);
 }
 
 a:hover {
@@ -24,20 +31,24 @@ a:hover {
 
 img {
     width: 100%;   
-    border: 1px solid #30363D;
+    border: 1px solid var(--borders);
 }
 
-input, button {
+input, button, select, textarea {
     background-color: transparent;
-    border: 1px solid #30363D;
+    border: 1px solid var(--borders);
     padding: .4rem;
-    color: #fff;
+    color: var(--text-color);
     min-width: 2rem;
+}
+
+select option {
+    color: black;
 }
 
 hr {
     border-top: none;
-    border-color: #30363D;
+    border-color: var(--borders);
 }
 
 li {
@@ -52,7 +63,7 @@ footer {
 @media only screen and (min-width: 40rem) {
 body {
     max-width: 75%;
-    border: 1px solid #30363D;
+    border: 1px solid var(--borders);
     border-radius: 6px;
     padding: 2rem;
 }

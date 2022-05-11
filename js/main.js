@@ -1,15 +1,19 @@
 const links = [
     {
         label: "Week 1 notes",
-        url: "week1/index.html"
+        url: "week1/"
     },
     {
         label: "Week 2 notes",
-        url: "week2/index.html"
+        url: "week2/"
     },
     {
         label: "Week 3 notes",
-        url: "week3/index.html"
+        url: "week3/"
+    },
+    {
+        label: "Week 4 notes",
+        url: "week4/"
     }
 ]
 
@@ -29,3 +33,7 @@ function loadIndex() {
 }
 
 loadIndex()
+
+let currYear = new Date().getFullYear();
+
+document.getElementById('currYear').textContent = currYear;

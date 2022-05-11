@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 | Week 4</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <a href="../">Home > </a><a href="./">Week 4</a>
+    <h1>Week 4 notes</h1>
+    <p>Topics of the week: forms, form validation, OOP and more!</p>
+    <h2>Forms</h2>
+    <p>Forms are made up of a &lt;form&gt; element that contains form controls such as input fields, select menus and buttons. These input fields can be populated with information that is processed once the form has been submitted.</p>
+    <h3>Form Events</h3>
+    <p>focus: occurs when an element is focused on.</p>
+    <p>blur: occurs when the user moves the focus away from the form element.</p>
+    <p>change: occurs when the user moves the focus away from the form element <i>after</i> changing it.</p>
+    <p>submit: one of the most important ones. It catches the form before it is submitted.</p>
+    <h3>Form Controls</h3>
+    <p>Some common types of form control are:</p>
+    <ul>
+        <li>&lt;input> fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+        <li>&lt;select> menus for drop-down lists of options</li>
+        <li>&lt;textarea> elements for longer text entry</li>
+        <li>&lt;button> elements for submitting and resetting forms</li>
+    </ul>
+    <h3>Input fields</h3>
+    <p>These are the most common type of form controls, but they have several categories:</p>
+    <p>Text: used for entering a short piece of text, such as a username.</p>
+    <input type="text">
+    <p>Password: it works the same as the text types, except the characters are concealed as they are entered so they're unable to be read on the screen.</p>
+    <input type="password">
+    <p>Checkbox: used to select different options that can be checked (true) or left unchecked (false).</p>
+    <input type="checkbox"><input type="checkbox"><input type="checkbox">
+    <p>Radio Button: they allow users to check an option as true, but they provide an exclusive choice of options, so only one option can be selected.</p>
+    <input type="radio" name="example"><input type="radio" name="example"><input type="radio" name="example">
+    <p>Hidden: are not displayed by the browser, but have a 'value' attribute that can contain information that is submitted with the form. They are often used to send information such as settings or information that the user has already provided.</p>
+    <p>File: used to upload files, and most browsers will provide a browse button or similar that lets users select a file from their file system.</p>
+    <input type="file">
+    <p>Others: number, tel, color, etc.</p>
+    <input type="number">
+    <h3>Select Drop-Down List</h3>
+    <p>They can be used to select one or more options from a list of values.</p>
+    <select name="select" id="select">
+        <option value="0" selected>Choose an option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+    </select>
+    <h3>Text Areas</h3>
+    <p>They are used to enter long pieces of text over multiple lines such as a comment or blog post. They work in much the same way as input fields.</p>
+    <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Long boring text here..."></textarea>
+    <h2>Form Validation</h2>
+    <p>Form validation is the process of checking whether a user has entered the information into a form correctly.</p>
+    <h2>Practice</h2>
+    <p><a href="./forms.html">Forms practice</a></p>
+    <p><a href="./hero.html">Creating a superhero form</a></p>
+    <p><a href="./quizninja.html">Quiz Ninja</a></p>
+</body>
+</html>
