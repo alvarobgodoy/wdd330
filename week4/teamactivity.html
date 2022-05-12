@@ -64,14 +64,16 @@ class TicTacToe {
         this.reset.onclick = this.resetBoard.bind(this)
     }
     play(evt) {
-        if (evt.target.innerHTML === '') {
-            evt.target.innerHTML = this.currentPlayer;
-            this.checkResult();
-            if (this.currentPlayer === this.playerOne) {
-                this.currentPlayer = this.playerTwo;
-            } else {
-                this.currentPlayer = this.playerOne;
-        }
+        if (this.result === '') {
+            if (evt.target.innerHTML === '') {
+                evt.target.innerHTML = this.currentPlayer;
+                this.checkResult();
+                if (this.currentPlayer === this.playerOne) {
+                    this.currentPlayer = this.playerTwo;
+                } else {
+                    this.currentPlayer = this.playerOne;
+            }
+            }
         }
     }
     checkResult() {
