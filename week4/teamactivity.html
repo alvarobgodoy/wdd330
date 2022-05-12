@@ -38,6 +38,7 @@
 <body>
     <a href="../">Home > </a><a href="./">Week 4 > </a><a href="./teamactivity.html">Team Activity</a>  
     <h1>Tic-Tac-Toe</h1>
+    <p>Next move: <span id="nextMove">X</span></p>
     <div id="board">
         <div></div>
         <div></div>
@@ -72,7 +73,11 @@ class TicTacToe {
                     this.currentPlayer = this.playerTwo;
                 } else {
                     this.currentPlayer = this.playerOne;
-            }
+                }
+                document.getElementById('nextMove').textContent = this.currentPlayer;
+                if (this.result !== '') {
+                    document.getElementById('nextMove').textContent = '-';
+                }  
             }
         }
     }
@@ -106,7 +111,7 @@ class TicTacToe {
                 }
             }
         }
-        document.getElementById('result').textContent = this.result;       
+        document.getElementById('result').textContent = this.result;    
     }
     resetBoard() {
         let allDivs = document.querySelectorAll('#board div');
@@ -116,6 +121,7 @@ class TicTacToe {
         document.getElementById('result').textContent = '';
         this.currentPlayer = 'X';
         this.result = '';
+        document.getElementById('nextMove').textContent = 'X';
     }
 }
 
