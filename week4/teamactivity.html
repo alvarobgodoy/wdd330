@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 | Team Activity</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 300px;
+        }
+
+        #board > div {
+            width: 100px;
+            height: 100px;
+            border-right: 1px solid #30363D;
+            border-bottom: 1px solid #30363D;
+            font-size: 5rem;
+            text-align: center;
+        }
+
+        #board > div:nth-child(3n) {
+            border-right: 0px;
+        }
+
+        #board > div:nth-child(n+7) {
+            border-bottom: 0px;
+        }
+
+        #reset {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../">Home > </a><a href="./">Week 4 > </a><a href="./teamactivity.html">Team Activity</a>  
+    <h1>Tic-Tac-Toe</h1>
+    <div id="board">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p>Result: <span id="result"></span></p>
+    <button type="button" id="reset">Reset</button>
+    <script>
+class TicTacToe {
+    constructor() {
+        this.board = document.getElementById('board'),
+        this.reset = document.getElementById('reset'),
+        this.playerOne = 'X',
+        this.playerTwo = 'O',
+        this.result = '',
+        this.currentPlayer = this.playerOne,
+        this.board.onclick = this.play.bind(this),
+        this.reset.onclick = this.resetBoard.bind(this)
+    }
+    play(evt) {
+        if (evt.target.innerHTML === '') {
+            evt.target.innerHTML = this.currentPlayer;
+            this.checkResult();
+            if (this.currentPlayer === this.playerOne) {
+                this.currentPlayer = this.playerTwo;
+            } else {
+                this.currentPlayer = this.playerOne;
+        }
+        }
+    }
+    checkResult() {
+        let allDivs = document.querySelectorAll('#board div');
+        if (this.result === '') {
+            if (allDivs[0].textContent !== '' && allDivs[0].textContent === allDivs[1].textContent && allDivs[1].textContent === allDivs[2].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;
+            } else if (allDivs[0].textContent !== '' && allDivs[0].textContent === allDivs[3].textContent && allDivs[3].textContent === allDivs[6].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;
+            } else if (allDivs[2].textContent !== '' && allDivs[2].textContent === allDivs[5].textContent && allDivs[5].textContent === allDivs[8].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;
+            } else if (allDivs[6].textContent !== '' && allDivs[6].textContent === allDivs[7].textContent && allDivs[7].textContent === allDivs[8].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;
+            } else if (allDivs[0].textContent !== '' && allDivs[0].textContent === allDivs[4].textContent && allDivs[4].textContent === allDivs[8].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;
+            } else if (allDivs[2].textContent !== '' && allDivs[2].textContent === allDivs[4].textContent && allDivs[4].textContent === allDivs[6].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;       
+            } else if (allDivs[3].textContent !== '' && allDivs[3].textContent === allDivs[4].textContent && allDivs[4].textContent === allDivs[5].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;       
+            } else if (allDivs[1].textContent !== '' && allDivs[1].textContent === allDivs[4].textContent && allDivs[4].textContent === allDivs[7].textContent) {
+                this.result = `Player ${this.currentPlayer} won!`;       
+            } else {
+                let allDivs = document.querySelectorAll('#board div');
+                let divArr = Array.from(allDivs);
+                let isTie = divArr.every(div => {
+                    return div.textContent !== ''
+                });
+                if (isTie) {
+                    this.result = 'a TIE!';
+                }
+            }
+        }
+        document.getElementById('result').textContent = this.result;       
+    }
+    resetBoard() {
+        let allDivs = document.querySelectorAll('#board div');
+        allDivs.forEach(div => {
+            div.innerHTML = '';
+        });
+        document.getElementById('result').textContent = '';
+        this.currentPlayer = 'X';
+        this.result = '';
+    }
+}
+
+const game = new TicTacToe();
+    </script>
+</body>
+</html>
