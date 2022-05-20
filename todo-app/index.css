@@ -138,13 +138,14 @@ hr {
     position: absolute;
     bottom: 1rem;
     display: flex;
-    justify-content: space-between;
-    gap: .2rem;
+    /* justify-content: space-between; */
+    /* gap: .2rem; */
+    width: 90%;
 }
 
 .input input {
     height: 2.1rem;
-    width: 21rem;
+    width: 80%;
     font-size: 1rem;
 }
 
