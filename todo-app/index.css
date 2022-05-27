@@ -81,14 +81,8 @@ hr {
     position: relative;
 }
 
-.tasks p.checked::after {
-    content: '';
-    position: absolute;
-    left: .5rem;
-    bottom: .5rem;
-    width: calc(100% - 1rem);
-    background-color: #ffffff;
-    height: 2px;
+.tasks p.checked {
+    text-decoration: line-through;
 }
 
 .tasks input {
