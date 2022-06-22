@@ -23,7 +23,7 @@ h1, h2, h3 {
 a {
     text-decoration: none;
     color: var(--links);
-    transition: .2s;
+    transition: .3s;
 }
 
 a:hover {
@@ -42,6 +42,15 @@ input, button, select, textarea {
     padding: .4rem;
     color: var(--text-color);
     min-width: 2rem;
+    transition: .3s;
+}
+
+input:hover, button:hover, select:hover, textarea:hover {
+    border: 1px solid var(--text-color);
+}
+
+button, select {
+    cursor: pointer;
 }
 
 select option {
