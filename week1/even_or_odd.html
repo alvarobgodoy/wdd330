@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script>
+        function checkNumber() {
+            let num = document.getElementById('num_input').value;
+            if (num != '') {
+                let remainder = num % 2;
+                if (num != 0 && remainder == 0) {
+                    document.getElementById('result_display').textContent = 'The number is EVEN!'
+                } else if (num != 0 && remainder == 1) {
+                    document.getElementById('result_display').textContent = 'The number is ODD!'
+                } else {
+                    document.getElementById('result_display').textContent = '0 is neither even or odd...'
+                }
+            } else {
+                document.getElementById('result_display').textContent = 'Please enter a number...'
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 1 </a><a href="./even_or_odd.html">> Even or Odd</a>
+        <h1>Even or Odd???</h1>
+            Enter a Number: <input id=num_input></input>
+            <button onclick="checkNumber()">Check It!</button>
+            <br>
+            <section id="result_display"></section>
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+</body>
+</html>
