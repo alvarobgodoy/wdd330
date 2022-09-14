@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --background-color: #0D1117;
+    --font-color: #ffffff;
+    --link-color: #58a6ff;
+    --delimiter-color: #30363d;
+    --links: #3CA6FF;
+    --main-background: #0D1117;
+    --borders: #30363D;
+    --text-color: #ffffff;
+}
+
+/* Small view */
+body {
+    background-color: var(--main-background);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+footer {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    border-bottom: 1px solid var(--borders);
+}
+
+a {
+    text-decoration: none;
+    color: var(--links);
+    transition: .3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #a8d8ff;
+}
+
+img {
+    width: 100%;   
+    border: 1px solid var(--borders);
+}
+
+input, button, select, textarea {
+    background-color: transparent;
+    border: 1px solid var(--borders);
+    padding: .4rem;
+    color: var(--text-color);
+    min-width: 2rem;
+    transition: .3s;
+}
+
+input:hover, button:hover, select:hover, textarea:hover {
+    border: 1px solid var(--text-color);
+}
+
+button, select {
+    cursor: pointer;
+}
+
+select option {
+    color: black;
+}
+
+hr {
+    border-top: none;
+    border-color: var(--borders);
+}
+
+li {
+    margin-top: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+code {
+    display: block;
+    padding: 1rem 2rem;
+    border: 1px solid var(--borders);
+    font-size: 1rem;
+}
+
+/* Medium view */
+@media only screen and (min-width: 40rem) {
+main {
+    max-width: 75%;
+    border: 1px solid var(--borders);
+    border-radius: 6px;
+    padding: 2rem;
+}
+}
+
+/* Large view */
+@media only screen and (min-width: 64rem) {
+main {
+    max-width: 50%;
+}
+}
