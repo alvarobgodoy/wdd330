@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrum Meeting</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    h2 {
+      margin-bottom: .3rem;
+      font-size: medium;
+    }
+    section {
+      height: 15vh;
+      margin: 2rem 0;
+    }
+
+    #output0, #output1, #output2 {
+      color: greenyellow;
+      margin-top: 1rem;
+      background-color: black;
+      width: 25%;
+      padding: .2rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <main>
+    <a href="../">Home </a><a href="./">> Week 2 </a><a href="./team02.html">> Team Activity</a>
+    <h1>Week 2 Team Activity</h1>
+    <!--input and a button. Empty div with an ID.-->
+    <section>
+      <h2>Core 01: Print Out Value</h2>
+      <input id="inputField0" type="number">
+      <button onclick="printOut0()" type="submit">Hot Print</button>
+      <div id="output0"></div>
+    </section>
+    
+
+    <!---->
+    <section>
+      <h2>Core 02: Interger Summation</h2>
+      <input id="inputField1" type="number">
+      <button onclick="printOut1()" type="submit">Total My Number</button>
+      <div id="output1"></div>
+    </section>
+    
+
+    <!---->
+    <section>
+      <h2>Core 03: Counting Machine</h2>
+      <input id="inputFieldA" type="number">
+      <input id="inputFieldB" type="number">
+      <button onclick="multiply()" type="submit">Press(*)</button>
+      <button onclick="divide()" type="submit">Press(/)</button>
+      <button onclick="add()" type="submit">Press(+)</button>
+      <button onclick="subtract()" type="submit">Press(-)</button>
+      <div id="output2"></div>
+    </section>
+  </main>
+  
+
+  <!--Author: Simon Mule - Refactor pending -->
+  <!--input id="inputField" type="text">
+  <button id="submitBtn" onclick="printOut()" type="submit">Submit</button>
+  <div id="output"></div>
+
+  <input id="inputField2" type="text">
+  <button id="submitBtn" onclick="add()" type="submit">Submit</button>
+  <div id="output"></div-->
+
+  <!--input id="inputField2" type="text">
+  <button id="submitBtn2" onclick="printOut2()" type="submit">Submit</button>
+  <div id="output2"></div-->
+
+
+
+  <script>
+    //function reads input value, and pushes the return value with an onclick 
+    function printOut0() {
+      const input0 = document.getElementById('inputField0');
+      const output0 = document.getElementById('output0');
+      output0.innerHTML = input0.value;
+    }
+
+    //function finds the total of the provided number.
+    const printOut1 = () => {
+      let input1 = parseInt(inputField1.value);
+      let total = 0
+      for (let index = input1; index > 0; index--) {
+        total += index
+      }
+      document.getElementById('output1').innerHTML = `Hey, ${input1} totals upto ${total}.`
+    }
+
+    //three variables are defined
+    let inPut1 = document.getElementById('inputFieldA');
+    let inPut2 = document.getElementById('inputFieldB');
+    let outPut2 = document.getElementById('output2');
+
+    // the arrow function adds two povided values
+    const multiply = () => {
+      outPut2.innerText = parseInt(inputFieldA.value) * parseInt(inputFieldB.value);
+    }
+
+    //stretch: add other orders of operation
+    const divide = () => {
+      outPut2.innerText = parseInt(inputFieldA.value) / parseInt(inputFieldB.value);
+    }
+
+    const add = () => {
+      outPut2.innerText = parseInt(inputFieldA.value) + parseInt(inputFieldB.value);
+    }
+
+    const subtract = () => {
+      outPut2.innerText = parseInt(inputFieldA.value) - parseInt(inputFieldB.value);
+    }
+
+    //Author: Simon Mule - Refactor pending
+    // function printOut() {
+    //   const input = document.getElementById('inputField');
+    //   const output = document.getElementById('output');
+    //   output.innerHTML = input.value;
+    // }
+
+    // function printOut2() {
+    //   const input2 = document.getElementById('inputField2');
+    //   const output2 = document.getElementById('output2');
+    //   output.innerHTML = add();
+    // }
+
+    // function sum () {
+    //   let sum = parseInt(input) + parseInt(input2);
+    //   const total = document.getElementById('sumOutput');
+    //   total.innerHTML = sum;
+    // }
+    // sum(input, input2);
+
+  </script>
+
+</body>
+</html>

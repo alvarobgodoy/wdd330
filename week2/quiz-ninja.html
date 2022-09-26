@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 2 </a><a href="./quiz-ninja.html">> Quiz Ninja</a>
+        <h1>Quiz Ninja</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <br>
+        <br>
+        <img src="https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg" alt="Dojo Image">
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+    <script>
+        function startQuiz() {
+            const quiz = [
+                ["What is Superman's real name?","Clark Kent"],
+                ["What is Wonder Woman's real name?","Diana Prince"],
+                ["What is Batman's real name?","Bruce Wayne"]
+            ];
+
+            let score = 0;
+
+            for (const [question, answer] of quiz) {
+                const response = prompt(question);
+                if (response === answer) {
+                    alert('Correct answer!');
+                    score++;
+                } else {
+                    alert(`Wrong! The correct answer was ${answer}`);
+                }
+            }
+
+            alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+        }
+    </script>
+</body>
+</html>
