@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 3 </a><a href="./quiz-ninja.html">> Quiz Ninja</a>
+        <h1>Quiz Ninja</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <br>
+        <br>
+        <img src="https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg" alt="Dojo Image">
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+    <script>
+const quiz = [
+    { name: "Superman",realName: "Clark Kent" },
+    { name: "Wonder Woman",realName: "Diana Prince" },
+    { name: "Batman",realName: "Bruce Wayne" },
+];
+
+const game = {
+    start(quiz) {
+        this.questions = [...quiz];
+        this.score = 0;
+        for(const question of this.questions) {
+            this.question = question;
+            this.ask();
+        }
+        this.gameOver();
+    },
+    ask() {
+        this.answer = prompt(`What is the real name of ${this.question.name}?`);
+        this.check();
+    },
+    check() {
+        if (this.answer == this.question.realName) {
+            this.score++;
+        }
+    },
+    gameOver() {
+        alert(`You've got ${this.score} points!`)
+    }
+}
+
+function startQuiz() {
+    game.start(quiz);
+}
+    </script>
+</body>
+</html>
