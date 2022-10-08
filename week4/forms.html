@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 4 </a><a href="./forms.html">> Forms</a>
+        <h1>Forms</h1>
+        <form name='search'>
+            <input name='searchFocus' placeholder="Click me!">
+            <button>Search</button>
+            <span>&nbsp;&nbsp; <-- Click the input!</span>
+            <br><br>
+            <input name="searchBlur" placeholder="Click me, then click away.">
+            <br><br>
+            <input name="searchChange"> <span>&nbsp;&nbsp; <-- Click it, then click away!</span>
+            <p>Nothing happened? Try changing it, then clicking away.</p>
+            <h2>Getting input values</h2>
+            <input name='searchDisplay' placeholder="Search something!">
+            <button onclick="displaySearch()">Search</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+    <script>
+        const allForms = document.forms;
+        const searchForm = allForms['search'];
+
+        const input = searchForm.elements['searchFocus'];
+
+        input.addEventListener('focus', (e) => {
+            alert('Focused on input!');
+            e.target.blur();
+        }, false);
+
+        const searchBlur = searchForm.elements['searchBlur'];
+
+        searchBlur.addEventListener('blur', () => alert('Blurred'), false);
+
+        const searchChange = searchForm.elements['searchChange'];
+        searchChange.addEventListener('change', () => alert('You triggered the change event!'), false);
+
+        const searchDisplay = searchForm.elements['searchDisplay'];
+        function displaySearch() {
+            alert(`You searched for: ${searchDisplay.value}`);
+        }
+    </script>
+</body>
+</html>

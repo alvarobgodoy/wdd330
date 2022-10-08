@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 4</a>
+        <h1>Week 4 Notes</h1>
+        <p>Topics of the week: forms, OOP, and more!</p>
+        <h2>Forms</h2>
+        <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing.</p>
+        <p>Traditionally, when a form was submitted, it would be sent to a server where the information would be processed using a the backend. It is also possible to process the form in the client before sending it to the server, for example, if we wanted to provide one extra layer of validation to our form.</p>
+        <h3>Search Form Example</h3>
+        <form action="GET">
+            <input type="text">
+            <button>Search</button>
+        </form>
+        <h3>Returning forms</h3>
+        <code>const forms = document.forms;</code>
+        <code>const forms = document.getElementsByTagname('form');</code>
+        <p>By name</p>
+        <code>const form = document.forms['search'];</code>
+        <p>A form object also has a method called elements that returns an HTML collection of all the elements contained in the form</p>
+        <code>const formElements = form.elements;</code>
+        <h3>Form Methods</h3>
+        <code>
+            // To reset all the form controls back to their initial values. <br><br>  
+            form.reset();
+        </code>
+        <br>
+        <code>
+            // To submit the form automatically. <br><br>
+            form.submit();
+        </code>
+        <br>
+        <a href="./forms.html">Click here to see some forms in action!</a>
+        <h3>Form Controls</h3>
+        <a href="./hero.html">Building a Superhero!</a>
+        <h2>Quiz Ninja</h2>
+        <a href="./quiz-ninja.html">Click here! Now with the help of forms.</a>
+        <h2>Object Oriented Programming</h2>
+        <p>Object-oriented programming is a programming paradigm based on the concept of "objects", which can contain data and code: data in the form of fields, and code, in the form of procedures.</p>
+        <h2>Team activity</h2>
+        <a href="./team04.html">Tic Tac Toe!</a>
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>
