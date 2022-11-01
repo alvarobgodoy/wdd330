@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 | WDD 330</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <a href="../">Home </a><a href="./">> Week 7</a>
+        <h1>Week 7 notes</h1>
+        <p>Topics of the week: functions (properties, methods, recursion), AJAX, and more!</p>
+        <h2>Function Methods</h2>
+        <p>length: returns the number of parameters the function has</p>
+        <code>
+            function square(x) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return x*x;<br>
+            }<br>
+            <br>
+            square.length<br>
+            << 1<br>
+        </code>
+        <p>call(object): used to set the value of <i>this</i> inside a function to an object that is provided as the first argument</p>
+        <code>
+            function sayHello(){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return `Hello, my name is ${ this.name }`;<br>
+            }<br>
+            <br>
+            const clark = { name: 'Clark' };<br>
+            const bruce = { name: 'Bruce' };<br>
+            <br>
+            sayHello.call(clark);<br>
+            << 'Hello, my name is Clarke'<br>
+            <br>
+            sayHello.call(bruce);<br>
+            << 'Hello, my name is Bruce'<br>
+        </code>
+        <h2>Memoization</h2>
+        <p>If a function takes some time to compute a return value, we can save the result in a cache property. Then if the same argument is used again later, we can return the value from the cache, rather than having to compute the result again.</p>
+        <code>
+            function square(x){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;square.cache = square.cache || {};<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (!square.cache[x]) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square.cache[x] = x*x;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return square.cache[x]<br>
+            }
+        </code>
+        <p>TLDR: cache</p>
+        <h2>Immediately Invoked Function Expressions (IIFE)</h2>
+        <p>an anonymous function that, as the name suggests, is invoked as soon as it's defined. This is easily achieved by placing parentheses at the end of the function definition (remember we use parentheses to invoke a function). The function also has to be made into an expression, which is done by placing the whole declaration inside parentheses</p>
+        <code>
+            (function(){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;const temp = 'World';<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello ${temp}`);<br>
+                })();<br>
+        </code>
+        <p>IIFEs are a useful way of performing a task while keeping any variables wrapped up within the scope of the function. This means the global namespace is not polluted with lots of variable names.</p>
+        <h2>Recursive Functions</h2>
+        <p>A recursive function is one that invokes itself until a certain condition is met. It's a useful tool to use when iterative processes are involved.</p>
+        <code>
+            function factorial(n) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (n === 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n * factorial(n - 1);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }
+        </code>
+        <h2>Team Activity</h2>
+        <a href="./hikes5/index.html">Hikes!</a>
+    </main>
+    <footer>
+        <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>

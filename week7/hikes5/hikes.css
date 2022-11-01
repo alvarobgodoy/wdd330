@@ -1,0 +1,132 @@
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    color: #011c01;
+    background-color: #c9ffc9;
+}
+
+h1 {
+    background: rgb(1,28,1);
+    background: linear-gradient(90deg, rgba(1,28,1,1) 0%, rgba(13,68,13,1) 50%, rgba(1,27,1,1) 100%);
+    padding: 4rem;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    font-size: 3rem;
+    box-shadow: 1px 1px 10px #000;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.backBtn {
+    position: relative;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #042704;
+    color: #fff;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.light {
+    margin: 3rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.light h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.light img {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    z-index: -1;
+    box-shadow: 1px 1px 10px #000;
+}
+
+.light .infoSmall {
+    z-index: 10;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -4rem;
+    padding: 1rem;
+    background-color: #c9ffc9;
+    box-shadow: 1px 1px 10px #000;
+}
+
+.dark h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.dark div {
+    margin: 0 1rem;
+}
+
+.dark h3 {
+    font-size: 1.5rem;
+}
+
+.light .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.light .image:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+}
+
+/* Hover state - trigger effect */
+.light .image:hover:after {
+    opacity: 1;
+    left: 130%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+}
+
+/* Active state */
+.light .image:active:after {
+    opacity: 0;
+}
