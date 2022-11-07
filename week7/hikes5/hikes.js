@@ -33,7 +33,11 @@ const hikeList = [
   }
 ];
 
+import CommentModel from "./comments.js";
+const hikeComments = new CommentModel('hike');
+
 const imgBasePath = '//byui-cit.github.io/cit261/examples/';
+const comments = document.getElementById('comments');
 
 export default class Hikes {
   constructor(elementId) {
@@ -57,12 +61,21 @@ export default class Hikes {
     this.parentElement.innerHTML = '';
     this.parentElement.appendChild(renderOneHikeFull(hike));
     this.backButton.classList.remove('hidden');
+
+    const commentSection = hikeComments.buildCommentListHtml(hike);
+    const commentForm = hikeComments.buildCommentForm(hike, commentSection, comments);
+
+    comments.innerHTML = '';
+    comments.appendChild(commentForm);
+    comments.appendChild(commentSection);
   }
   addHikeListener() {
     const childrenArray = Array.from(this.parentElement.children);
     childrenArray.forEach(child => {
-      child.onclick = (e) => {
-        this.showOneHike(e.currentTarget.dataset.name);
+      if(child.tagName == 'LI') {
+        child.onclick = (e) => {
+          this.showOneHike(e.currentTarget.dataset.name);
+        }
       }
     });
   }
@@ -82,11 +95,17 @@ export default class Hikes {
 function renderHikeList(parent, hikes) {
   hikes.forEach(hike => {
     parent.appendChild(renderOneHikeLight(hike));
+    const commentSection = hikeComments.buildCommentListHtml(hike);
+    const commentForm = hikeComments.buildCommentForm(hike, commentSection, comments);
+    
+    parent.appendChild(commentForm);
+    parent.appendChild(commentSection);
   });
 }
 function renderOneHikeLight(hike) {
   const item = document.createElement('li');
   item.classList.add('light');
+
   // setting this to make getting the details for a specific hike easier later.
   item.setAttribute('data-name', hike.name);
   item.innerHTML = ` <h2>${hike.name}</h2>
@@ -100,6 +119,9 @@ function renderOneHikeLight(hike) {
             <h3>Difficulty</h3>
             <p>${hike.difficulty}</p>
         </div>
+</div>
+<div class="hikeComments">
+    
 </div>`;
 
   return item;

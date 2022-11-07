@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+:root {
+  --box-x-padding: 2rem;
+  --box-y-padding: 2rem;
+}
+@media (min-width: 48rem) {
+  :root {
+    --box-y-padding: 4rem;
+  }
+}
+@media (min-width: 64rem) {
+  :root {
+    --box-x-padding: 3rem;
+    --box-y-padding: 6rem;
+  }
+}
+
+h1 {
+  text-align: center;
+  
+}
+
+.hike-card {
+  display: block;
+  border: 1px solid #cccc;
+  margin-bottom: 2rem;
+}
+
+.sub-content {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.img img {
+  width: 100%;
+}
+
+
+/* 35em is also 560px when basefont is 16px */
+@media only screen and (min-width: 48rem) {
+  h1 {
+    font-size: 5rem;
+  }
+  .hike-card {
+		display: grid;
+		grid-template-rows: repeat(4, auto);
+		grid-template-columns: 4fr 4fr 5fr;
+		grid-template-areas: '. . title' 'img img content' 'img img .';
+		max-width: 1000px;
+		margin-right: auto;
+		margin-left: auto;
+    border: none;
+  }
+	/* The white box that's drawn behind the content*/
+	/* You can totally place it on the grid!*/
+	.hike-card::after {
+		content: '';
+		grid-column: 2 / -1;
+		grid-row: 1 / 3;
+		position: relative;
+		z-index: -1; /*place it behind the other blocks*/
+		background: white;
+		box-shadow: 0 .2rem 1rem rgba(61,48,41,0.2);
+  }
+	h2.hike-title {
+    grid-area: title;
+		padding-top: 6rem;
+		padding-left: 3rem;
+  }
+
+	.content {
+		grid-area: content;
+		padding-bottom: 6rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+  }
+	.img {
+		grid-area: img;
+  }
+
+  h2.hike-title {
+    font-size: 1.6rem;
+	  margin: 0 0 1rem;
+	  font-family: serif;
+	  position: relative;
+  }
+	
+	
+	/*The line on top of the title*/
+	h2.hike-title::after {
+    content: '';
+		position: absolute;
+		width: 6rem;
+		background-color: #cccc;
+		height: 2px;
+		top: 0;
+		left: 0;
+    left: var(--box-x-padding);
+    top: var(--box-y-padding);
+  }
+ 
+  h1.hike-title::after {
+    left: var(--box-x-padding);
+    top: var(--box-y-padding);
+  }
+	
+  .content {
+    margin-bottom: 6rem;
+    margin-bottom: 0;
+  }
+
+  .img {
+    position: relative;
+  }
+	
+	.img a {
+    position: absolute;
+		left: 0;
+		bottom: 0;
+  }
+		
+	
+  .img img {
+    max-width: 100%;
+    vertical-align: middle;
+    box-shadow: 1rem 2rem 3rem rgb(61 48 41 / 10%);
+  }
+
+  .sub-content {
+    display: block;
+  }
+
+}
+
+
+
+@media only screen and (min-width: 64rem) {
+
+}
