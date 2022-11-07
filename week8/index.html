@@ -4,13 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 7 | WDD 330</title>
+    <title>Week 8 | WDD 330</title>
     <link rel="stylesheet" href="../css/main.css">
+    <style>
+        span {
+            transition: 1s;
+            color: #3CA6FF;
+            cursor: pointer;
+        }
+
+        #movingWord:hover {
+            transform: translateX(30px);
+            display: inline-block;
+        }
+
+        #scaleWord:hover {
+            transform: scale(1.5);
+            display: inline-block;
+        }
+
+        #rotateWord:hover {
+            transform: rotate(360deg);
+            display: inline-block;
+        }
+
+        #skewWord:hover {
+            transform: skew(15deg, 4deg);
+            display: inline-block;
+        }
+
+        #myCanvas {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #30363D;
+        }
+    </style>
 </head>
 <body>
     <main>
         <a href="../">Home </a><a href="./">> Week 7</a>
-        <h1>Week 7</h1>
+        <h1>Week 8</h1>
+        <p>Topics of the week: CSS transition and transform, canvas, svg's, etc.</p>
+        <h3>Transform:</h3>
+        <p>The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.</p>
+        <p>Examples:</p>
+        <p>Translation functions allow you to move elements left, right, up, or down.</p>
+        <span id="movingWord">This moves</span><br><br>
+        <p>The scale(x,y) function scales an element by the defined factors horizontally then vertically. If only one value is provided, it will be used for both the x and y values.</p>
+        <span id="scaleWord">This scales</span><br><br>
+        <p>The rotate() function rotates an element around the point of origin by a specified angle value.</p>
+        <span id="rotateWord">This rotates</span><br><br>
+        <p>The skew(x,y) function specifies a skew along the x and y axes.</p>
+        <span id="skewWord">This skews</span>
+        <h3>Changing the Origin of the Transform:</h3>
+        <p>You can control the origin from which your transforms are applied. This is done using the transform-origin property.</p>
+        <h2>Canvas:</h2>
+        <canvas id="myCanvas" class="myCanvas">
+            Sorry! Your browser doesn't support Canvas.
+        </canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas"); 
+        var context = canvas.getContext("2d"); 
+        context.strokeStyle = "red";
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(10, 10, 100, 100);   
+        context.strokeRect(10, 10, 100, 100);
+    </script>
     </main>
     <footer>
         <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>
