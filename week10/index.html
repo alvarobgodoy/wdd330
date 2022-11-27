@@ -11,6 +11,67 @@
     <main>
         <a href="../">Home > </a><a href="./">Week 10</a>  
         <h1>Week 10 Notes</h1>
+        <p>Form validation and Fetch API</p>
+        <h2>What is form validation?</h2>
+        <p>When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application. Validation done in the browser is called client-side validation, while validation done on the server is called server-side validation. In this chapter we are focusing on client-side validation.</p>
+        <p>If the information is correctly formatted, the application allows the data to be submitted to the server and (usually) saved in a database; if the information isn't correctly formatted, it gives the user an error message explaining what needs to be corrected, and lets them try again.</p>
+        <h2>Types of Form Validation</h2>
+        <p>There are two different types of client-side validation that you'll encounter on the web:</p>
+        <ul>
+            <li><strong>Built-in form validation</strong> uses HTML form validation features, which we've discussed in many places throughout this module. This validation generally doesn't require much JavaScript. Built-in form validation has better performance than JavaScript, but it is not as customizable as JavaScript validation.</li>
+            <li><strong>JavaScript validation</strong> is coded using JavaScript. This validation is completely customizable, but you need to create it all (or use a library).</li>
+        </ul>
+        <h2>Examples:</h2>
+        <form action="">
+            <label for="">Required field
+                <input type="text" required></label>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form>
+            <p>
+                <legend>Do you have a driver's license?<span aria-label="required">*</span></legend>
+                <!-- While only one radio button in a same-named group can be selected at a time,
+                     and therefore only one radio button in a same-named group having the "required"
+                     attribute suffices in making a selection a requirement -->
+                <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+                <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+            </p>
+            <p>
+              <label for="n1">How old are you?</label>
+              <!-- The pattern attribute can act as a fallback for browsers which
+                   don't implement the number input type but support the pattern attribute.
+                   Please note that browsers that support the pattern attribute will make it
+                   fail silently when used with a number field.
+                   Its usage here acts only as a fallback -->
+              <input type="number" min="12" max="120" step="1" id="n1" name="age"
+                     pattern="\d+">
+            </p>
+            <p>
+              <label for="t1">What's your favorite fruit?<span aria-label="required">*</span></label>
+              <input type="text" id="t1" name="fruit" list="l1" required
+                     pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+              <datalist id="l1">
+                <option>Banana</option>
+                <option>Cherry</option>
+                <option>Apple</option>
+                <option>Strawberry</option>
+                <option>Lemon</option>
+                <option>Orange</option>
+              </datalist>
+            </p>
+            <p>
+              <label for="t2">What's your e-mail address?</label>
+              <input type="email" id="t2" name="email">
+            </p>
+            <p>
+              <label for="t3">Leave a short message</label>
+              <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+            </p>
+            <p>
+              <button>Submit</button>
+            </p>
+          </form>
     </main>
     <footer>
         <p>&copy; 2022 | Alvaro B. Godoy | WDD 330</p>

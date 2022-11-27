@@ -89,6 +89,10 @@ code {
     color: #b1b1b1;
 }
 
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+
 /* Medium view */
 @media only screen and (min-width: 40rem) {
 main {
