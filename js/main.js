@@ -38,7 +38,15 @@ const links = [
     {
         label: "Qatar 2022",
         url: "qatar2022/"
-    }
+    },
+    {
+        label: "Week 10 notes",
+        url: "week10/"
+    },
+    {
+        label: "Week 11 notes",
+        url: "week11/"
+    },
 ]
 
 function loadIndex() {
