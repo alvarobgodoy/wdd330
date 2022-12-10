@@ -1,0 +1,283 @@
+:root {
+    --red: #56042C;
+    --white: #EEEEE4;
+    --yellow: #FEC310;
+    --blue: #1077C3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    background-color: var(--red);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header img {
+    max-width: 100px;
+}
+
+nav {
+    text-align: center;
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+}
+
+nav span {
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav span.active {
+    background-color: var(--white);
+    color: var(--red);
+}
+
+#groupStage {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#groupStage > div {
+    display: inline-block;
+    max-width: 210px;
+    min-height: 150px;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: var(--white);
+    color: var(--red);
+}
+
+#groupStage div select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.groupBtn {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    padding: 1rem 3rem;
+    font-size: 20px;
+    color: var(--red);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.quarterFinalsBtn {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    padding: 1rem 3rem;
+    font-size: 20px;
+    color: var(--red);
+    cursor: pointer;
+    grid-column: span 4;
+}
+
+.semiFinalsBtn {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    padding: 1rem 3rem;
+    font-size: 20px;
+    color: var(--red);
+    cursor: pointer;
+    grid-column: span 4;
+}
+
+.finalsBtn {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    padding: 1rem 3rem;
+    font-size: 20px;
+    color: var(--red);
+    cursor: pointer;
+    grid-column: span 4;
+}
+
+#roundOfSixteen {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    row-gap: 3rem;
+    text-align: center;
+}
+
+#roundOfSixteen > div {
+    /* padding: 0 1rem; */
+    margin: 1rem;
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 20px;
+}
+
+#roundOfSixteen > div label {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+#roundOfSixteen > div label:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+#roundOfSixteen > div label:first-child {
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 12px;
+}
+
+#quarterFinals > div {
+    /* padding: 0 1rem; */
+    margin: 1rem;
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 20px;
+}
+
+#quarterFinals {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    row-gap: 3rem;
+    text-align: center;
+}
+
+#quarterFinals > div label {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+#quarterFinals > div label:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+#quarterFinals > div label:first-child {
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 12px;
+}
+
+#semiFinals > div {
+    /* padding: 0 1rem; */
+    margin: 1rem;
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 20px;
+}
+
+#semiFinals {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 400px 400px;
+    justify-content: center;
+    gap: 1rem;
+    row-gap: 3rem;
+    text-align: center;
+}
+
+#semiFinals > div label {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+#semiFinals > div label:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+#semiFinals > div label:first-child {
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 12px;
+}
+
+#final > div {
+    /* padding: 0 1rem; */
+    margin: 1rem;
+    background-color: var(--white);
+    color: var(--red);
+    font-size: 20px;
+}
+
+#final {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 400px;
+    row-gap: 3rem;
+    justify-content: center;
+    text-align: center;
+}
+
+#final > div label {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+#final > div label:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+#final > div label:first-child {
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 12px;
+}
+
+.trophy {
+    max-width: 100px;
+}
+
+#result {
+    margin-top: 40px;
+}
+
+#result div {
+    text-align: center;
+}
+
+#result h2 {
+    font-size: 60px;
+    margin-bottom: 100px;
+}
